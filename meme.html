@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Button</title>
+  <style>
+    body {
+      background: #222;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+    .container {
+      background: white;
+      width: 350px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 15px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+    button {
+      padding: 10px 20px;
+      background: #50171c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #e84118;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>😂 Meme Time!</h1>
+  <img src="https://i.imgflip.com/26am.jpg" id="meme" alt="Funny Meme">
+  <h2 id="text">Don't click the button!</h2>
+  <button id="btn"> 😈Here!</button>
+</div>
+
+<script>
+  const btn = document.getElementById("btn");
+  const text = document.getElementById("text");
+  const meme = document.getElementById("meme");
+
+  let toggle = false; // keeps track of which meme is showing
+
+  btn.addEventListener("click", () => {
+    if (toggle) {
+      text.innerText = "😂 Don't click the button!";
+      meme.src = "https://i.imgflip.com/26am.jpg";
+    } else {
+      text.innerText = "🤣 why you clicked!";
+      meme.src = "https://i.imgflip.com/2fm6x.jpg";
+    }
+    toggle = !toggle; // switch between true/false
+  });
+</script>
+
+</body>
+</html>
